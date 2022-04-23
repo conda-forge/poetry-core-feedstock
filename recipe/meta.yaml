@@ -1,4 +1,4 @@
-{% set version = "1.1.0a6" %}
+{% set version = "1.1.0a7" %}
 
 package:
   name: poetry-core
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/p/poetry-core/poetry-core-{{ version }}.tar.gz
-  sha256: e22c8897216216f6344b3d57167a8cd5485a1403934817d7efaf7fb8f6bcffc9
+  sha256: 4622ae680842ac9b1b9c3b0e8dc467c2e291d1a5c434b6bd413907a2e5571d92
   patches:
     - vcs.patch
 
@@ -17,15 +17,14 @@ build:
 
 requirements:
   host:
-    - python >=3.6
+    - python >=3.7
     - pip
     - intreehooks
   run:
-    - python >=3.6
-    # upstream claims this isn't needed for py>=38 but want to keep this noarchs
+    - python >=3.7
+    # upstream claims this isn't needed for py>=38 but want to keep this noarch
     # if possible
     - importlib_metadata >=1.7.0
-    - dataclasses >=0.8
 
 test:
   imports:
