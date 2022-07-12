@@ -1,4 +1,4 @@
-{% set version = "1.1.0b2" %}
+{% set version = "1.1.0b3" %}
 
 package:
   name: poetry-core
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/p/poetry-core/poetry-core-{{ version }}.tar.gz
-  sha256: 48ef71ff8a4c2f0b4eaf9c138c12feb96dbf32e65baac8ca673769d05edf142f
+  sha256: ea257bb0aab15008d1680cc221a46f3457a3b36f3d463736f552497f0b6b9350
   patches:
     - vcs.patch
 
@@ -24,7 +24,7 @@ requirements:
     - python >=3.7
     # upstream claims this isn't needed for py>=38 but want to keep this noarch
     # if possible
-    - importlib_metadata >=1.7.0
+    - importlib-metadata >=1.7.0
 
 test:
   imports:
