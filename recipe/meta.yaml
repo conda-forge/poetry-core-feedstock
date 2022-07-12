@@ -24,7 +24,7 @@ requirements:
     - python >=3.7
     # upstream claims this isn't needed for py>=38 but want to keep this noarch
     # if possible
-    - importlib_metadata >=1.7.0
+    - importlib-metadata >=1.7.0
 
 test:
   imports:
