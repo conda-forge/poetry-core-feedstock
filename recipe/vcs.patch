@@ -1,6 +1,7 @@
-diff -ruN poetry-core-1.1.0/src/poetry/core/masonry/builders/builder.py poetry-core-1.1.0-patch/src/poetry/core/masonry/builders/builder.py
---- poetry-core-1.1.0/src/poetry/core/masonry/builders/builder.py	2022-08-31 04:29:34.546968200 +0200
-+++ poetry-core-1.1.0-patch/src/poetry/core/masonry/builders/builder.py	2022-08-31 09:12:05.476692642 +0200
+diff --git a/src/poetry/core/masonry/builders/builder.py b/src/poetry/core/masonry/builders/builder.py
+index 0b450e3..24acc4b 100644
+--- a/src/poetry/core/masonry/builders/builder.py
++++ b/src/poetry/core/masonry/builders/builder.py
 @@ -1,6 +1,7 @@
  from __future__ import annotations
  
@@ -9,13 +10,17 @@ diff -ruN poetry-core-1.1.0/src/poetry/core/masonry/builders/builder.py poetry-c
  import re
  import sys
  import warnings
-@@ -106,7 +107,8 @@
+@@ -108,8 +109,11 @@ class Builder:
  
              # Checking VCS
              vcs = get_vcs(self._path)
--            if not vcs:
-+            if not vcs or "CONDA_BUILD" in os.environ or \
-+                    os.environ.get("POETRY_NO_VCS_IGNORED_FILES", "0") == "1":
-                 vcs_ignored_files = set()
-             else:
-                 vcs_ignored_files = set(vcs.get_ignored_files())
+-            vcs_ignored_files = set(vcs.get_ignored_files()) if vcs else set()
+-
++            if vcs and "CONDA_BUILD" not in os.environ and \
++                os.environ.get("POETRY_NO_VCS_IGNORED_FILES", "0") != "1":
++                    vcs_ignored_files = set(vcs.get_ignored_files())
++            else:
++                vcs_ignored_files = set()
+             explicitly_excluded = set()
+             for excluded_glob in self._package.exclude:
+                 for excluded in self._path.glob(str(excluded_glob)):
