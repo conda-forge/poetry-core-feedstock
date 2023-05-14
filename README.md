@@ -7,7 +7,7 @@ Home: https://pypi.org/project/poetry-core/
 
 Package license: MIT
 
-Summary: Core utilities for Poetry
+Summary: Poetry PEP 517 Build Backend
 
 Current build status
 ====================
