@@ -1,5 +1,5 @@
 {% set name = "poetry-core" %}
-{% set version = "1.7.0" %}
+{% set version = "1.8.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/poetry_core-{{ version }}.tar.gz
-  sha256: 8f679b83bd9c820082637beca1204124d5d2a786e4818da47ec8acefd0353b74
+  sha256: 67a76c671da2a70e55047cddda83566035b701f7e463b32a2abfeac6e2a16376
   patches:
     - vcs.patch
 
@@ -38,6 +38,8 @@ about:
   license: MIT
   license_family: MIT
   license_file: LICENSE
+  dev_url: https://github.com/python-poetry/poetry-core
+  doc_url: https://github.com/python-poetry/poetry-core/blob/main/README.md
 
 extra:
   recipe-maintainers:
