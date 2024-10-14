@@ -21,8 +21,6 @@ requirements:
     - python >=3.8.0,<4.0.0
     - pip
   run:
-    - cachy >=0.2.0
-    - pendulum >=1.4.4
     - python >=3.8.0,<4.0.0
 
 test:
