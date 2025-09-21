@@ -1,5 +1,5 @@
 {% set name = "poetry-core" %}
-{% set version = "2.2.0" %}
+{% set version = "2.2.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/poetry_core-{{ version }}.tar.gz
-  sha256: b4033b71b99717a942030e074fec7e3082e5fde7a8ed10f02cd2413bdf940b1f
+  sha256: 97e50d8593c8729d3f49364b428583e044087ee3def1e010c6496db76bd65ac5
   patches:
     - 0001-vcs.patch
 
 build:
-  number: 1
+  number: 0
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
