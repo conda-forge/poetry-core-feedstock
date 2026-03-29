@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: poetry-core
-  version: "2.3.1"
+  version: "2.3.2"
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/poetry_core-${{ version }}.tar.gz
-  sha256: 96f791d5d7d4e040f3983d76779425cf9532690e2756a24fd5ca0f86af19ef82
+  sha256: 20cb71be27b774628da9f384effd9183dfceb53bcef84063248a8672aa47031f
   patches:
     - 0001-vcs.patch
 
